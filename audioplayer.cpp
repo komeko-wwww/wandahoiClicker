@@ -4,7 +4,9 @@ AudioPlayer::AudioPlayer() {
 	stream = new QAudioOutput;
 	track->setAudioOutput(stream);
 }
-void AudioPlayer::play(const char *path) {
+void AudioPlayer::setTrack(const char* path) {
 	track->setSource(QUrl::fromLocalFile(path));
+}
+void AudioPlayer::play() {
 	track->play();
 }

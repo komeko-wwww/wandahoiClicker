@@ -8,6 +8,7 @@ class AudioPlayer {
 		QAudioOutput *stream;
 	public:
 		AudioPlayer();
-		void play(const char *input);
+		void setTrack(const char *path);
+		void play();
 };
 #endif

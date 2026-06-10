@@ -10,7 +10,11 @@ int main(int argc, char **argv) {
 	window.resize(600,600);
 
 	QVBoxLayout *layout = new QVBoxLayout(&window);
+
+
 	auto *player = new AudioPlayer;
+	player->setTrack("./wandahoy.mp3");
+
 	auto *img = new ImageLabel();
 
 	QPixmap pixmap("./wonderhoy.png");
@@ -21,7 +25,7 @@ int main(int argc, char **argv) {
 
 	// wandahoi...
 	QObject::connect(img, &ImageLabel::clicked, [player]() {
-		player->play("./wandahoy.mp3");
+		player->play();
 	});
 	window.show();
 	return app.exec();
